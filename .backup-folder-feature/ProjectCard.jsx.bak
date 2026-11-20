@@ -1,0 +1,55 @@
+import { Button, Card, Popconfirm, Progress, Space, Tag } from 'antd'
+import { DeleteOutlined, FolderOutlined } from '@ant-design/icons'
+import { selectProjectStats } from '../../../store/selectors'
+
+/** 单个项目卡片：展示简介、进度与目录，可点开详情，可删除 */
+export default function ProjectCard({ project, onOpen, onDelete }) {
+  const stats = selectProjectStats(project)
+
+  return (
+    <Card
+      hoverable
+      className="project-card"
+      title={<span className="project-card-title">{project.name}</span>}
+      style={{ height: '100%' }}
+      onClick={() => onOpen?.(project.id)}
+      extra={
+        <Space size={4} onClick={(event) => event.stopPropagation()}>
+          <Popconfirm
+            title="删除该项目？"
+            description="项目下的所有任务会一并删除，且无法撤销。"
+            okText="删除"
+            cancelText="取消"
+            okButtonProps={{ danger: true }}
+            onConfirm={() => onDelete?.(project.id)}
+          >
+            <Button type="text" size="small" danger icon={<DeleteOutlined />} />
+          </Popconfirm>
+        </Space>
+      }
+    >
+      <p className="project-desc">{project.description}</p>
+
+      <div className="project-meta-row">
+        <Tag color="blue">{project.course}</Tag>
+        <span className="project-date">创建于 {project.createdAt}</span>
+      </div>
+
+      <div className="project-progress-row">
+        <div className="project-progress-label">
+          <span>任务进度</span>
+          <span>
+            {stats.completed}/{stats.total}
+            {stats.overdue > 0 ? <em className="text-danger"> · {stats.overdue} 项逾期</em> : null}
+          </span>
+        </div>
+        <Progress percent={stats.percent} size="small" strokeColor="#2563eb" showInfo={false} />
+      </div>
+
+      <div className="project-folder">
+        <FolderOutlined />
+        <span className="project-folder-path">{project.folderPath}</span>
+      </div>
+    </Card>
+  )
+}

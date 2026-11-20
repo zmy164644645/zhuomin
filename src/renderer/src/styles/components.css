@@ -1,0 +1,149 @@
+/* ============================================================
+   components.css — antd 组件全局覆盖
+   卡片 / 按钮 / 输入框 / 进度条 / 列表 / 标签 / 弹窗
+   ============================================================ */
+
+/* ---------------- 卡片 ---------------- */
+
+.ant-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid var(--line);
+  min-height: 46px;
+}
+
+.ant-card-head-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.ant-card-hoverable:hover {
+  border-color: #c7d6f5;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* 任务页顶部那块项目进度看板：淡蓝底，无渐变 */
+.task-board {
+  background: #fbfcfe !important;
+  border: 1px solid #e6ecf6 !important;
+}
+
+.task-list-card {
+  border: 1px solid var(--line) !important;
+}
+
+/* ---------------- 按钮 ---------------- */
+
+.ant-btn {
+  border-radius: 7px;
+  font-weight: 500;
+  box-shadow: none !important;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.ant-btn-primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.ant-btn-primary:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}
+
+.ant-btn-primary:active {
+  background: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+.ant-btn-default {
+  background: var(--bg-surface);
+  border-color: var(--line-strong);
+  color: var(--text-1);
+}
+
+.ant-btn-default:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* ---------------- 输入框 / 下拉 ---------------- */
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-input-outlined,
+.ant-select-outlined .ant-select-selector {
+  background: var(--bg-surface) !important;
+  border-color: var(--line-strong) !important;
+}
+
+.ant-input:hover,
+.ant-input-affix-wrapper:hover,
+.ant-select-outlined:hover .ant-select-selector {
+  border-color: #b9c2cf !important;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused,
+.ant-select-focused .ant-select-selector {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+}
+
+/* ---------------- 进度条 ---------------- */
+
+.ant-progress-inner {
+  background: #eef0f3 !important;
+}
+
+/* ---------------- 列表 ---------------- */
+
+.ant-list-item {
+  border-block-end: 1px solid var(--line) !important;
+  padding: 13px 4px !important;
+  transition: background 0.16s ease;
+  border-radius: 8px;
+}
+
+.ant-list-item:hover {
+  background: #fafbfc;
+}
+
+.ant-checkbox-inner {
+  border-radius: 4px !important;
+  border-color: #c4cad4 !important;
+  background: var(--bg-surface) !important;
+}
+
+/* ---------------- 标签 ---------------- */
+
+.ant-tag {
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 20px;
+  padding-inline: 7px;
+}
+
+/* ---------------- 弹窗 ---------------- */
+
+.ant-modal-content {
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px -12px rgba(16, 24, 40, 0.22) !important;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+

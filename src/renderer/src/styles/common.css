@@ -1,0 +1,29 @@
+/* ============================================================
+   common.css — 页面通用
+   页头与副标题，工作台、项目页、任务页共用
+   ============================================================ */
+
+/* ============================================================
+   页面通用：页头
+   ============================================================ */
+
+.page-header,
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.page-sub,
+.dashboard-sub {
+  color: var(--text-3);
+  font-size: 13px;
+}
+
+.text-danger {
+  color: var(--c-danger) !important;
+}
+

@@ -1,0 +1,338 @@
+/* ============================================================
+   App.css — 浅色极简
+   配色思路：近白基底 + 中性灰阶 + 单一蓝(#2563eb)强调
+   质感：1px 细描线、极轻投影、不用渐变/发光/毛玻璃
+   ============================================================ */
+
+:root {
+  --bg-page: #f7f8fa;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f4f5f7;
+  --bg-subtle-hover: #eff1f4;
+
+  --line: #e6e8ec;
+  --line-strong: #d5d9e0;
+
+  --text-1: #1f2328;
+  --text-2: #57606a;
+  --text-3: #8b949e;
+
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --accent-soft: #eef4ff;
+  --c-success: #16a34a;
+  --c-warning: #d97706;
+  --c-danger: #dc2626;
+
+  --radius-lg: 12px;
+  --radius-md: 10px;
+
+  --shadow-card: 0 1px 2px rgba(16, 24, 40, 0.04);
+  --shadow-hover: 0 4px 14px -8px rgba(16, 24, 40, 0.18);
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-1);
+  background-color: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+}
+
+.zhuomianbuju {
+  height: 100vh;
+  background: transparent !important;
+}
+
+/* ---------------- 左侧导航 ---------------- */
+
+.zuocecaidan {
+  height: 100vh;
+  background: var(--bg-surface) !important;
+  border-right: 1px solid var(--line);
+}
+
+.caidanlogo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 18px;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  color: var(--text-1);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 品牌名保持纯色，不用渐变字 */
+.caidanlogo span {
+  color: var(--text-1);
+  white-space: nowrap;
+}
+
+.logoqutupian {
+  height: 26px;
+  width: 26px;
+  flex: 0 0 auto;
+  border-radius: 6px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+}
+
+.zuocecaidan .ant-menu {
+  background: transparent !important;
+  border-inline-end: none !important;
+  padding: 12px 10px;
+}
+
+.zuocecaidan .ant-menu-item {
+  position: relative;
+  color: var(--text-2) !important;
+  font-size: 13.5px;
+  letter-spacing: 0.1px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.zuocecaidan .ant-menu-item:hover {
+  background: var(--bg-subtle) !important;
+  color: var(--text-1) !important;
+}
+
+.zuocecaidan .ant-menu-item-selected {
+  background: var(--accent-soft) !important;
+  color: var(--accent-hover) !important;
+  font-weight: 500;
+}
+
+/* 选中项左侧实心竖条：纯色，无发光 */
+.zuocecaidan .ant-menu-item-selected::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 16px;
+  border-radius: 0 2px 2px 0;
+  background: var(--accent);
+  border: none !important;
+  opacity: 1 !important;
+  inset-inline-end: auto !important;
+}
+
+.zuocecaidan .ant-menu-item .anticon {
+  font-size: 15px;
+}
+
+/* ---------------- 顶部标题栏 ---------------- */
+
+.dingbutoubu {
+  height: 56px !important;
+  line-height: 56px !important;
+  background: var(--bg-surface) !important;
+  color: var(--text-1) !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------------- 主内容区：白色面板 ---------------- */
+
+.neirongquyu {
+  margin: 16px;
+  padding: 24px 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow-y: auto;
+  height: calc(100vh - 56px - 32px);
+}
+
+.neirongquyu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.neirongquyu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.neirongquyu::-webkit-scrollbar-thumb {
+  background: #dcdfe4;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.neirongquyu::-webkit-scrollbar-thumb:hover {
+  background: #c3c8d0;
+  background-clip: content-box;
+}
+
+/* ---------------- 标题与文字层级 ---------------- */
+
+.neirongquyu h2 {
+  color: var(--text-1) !important;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px !important;
+  line-height: 1.4;
+}
+
+/* ---------------- 卡片 ---------------- */
+
+.ant-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid var(--line);
+  min-height: 46px;
+}
+
+.ant-card-head-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-1);
+}
+
+.ant-card-hoverable:hover {
+  border-color: #c7d6f5;
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* 任务页顶部那块项目进度看板：淡蓝底，无渐变 */
+.task-board {
+  background: #fbfcfe !important;
+  border: 1px solid #e6ecf6 !important;
+}
+
+.task-list-card {
+  border: 1px solid var(--line) !important;
+}
+
+/* ---------------- 按钮 ---------------- */
+
+.ant-btn {
+  border-radius: 7px;
+  font-weight: 500;
+  box-shadow: none !important;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.ant-btn-primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #ffffff !important;
+}
+
+.ant-btn-primary:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+}
+
+.ant-btn-primary:active {
+  background: #1e40af !important;
+  border-color: #1e40af !important;
+}
+
+.ant-btn-default {
+  background: var(--bg-surface);
+  border-color: var(--line-strong);
+  color: var(--text-1);
+}
+
+.ant-btn-default:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* ---------------- 输入框 / 下拉 ---------------- */
+
+.ant-input,
+.ant-input-affix-wrapper,
+.ant-input-outlined,
+.ant-select-outlined .ant-select-selector {
+  background: var(--bg-surface) !important;
+  border-color: var(--line-strong) !important;
+}
+
+.ant-input:hover,
+.ant-input-affix-wrapper:hover,
+.ant-select-outlined:hover .ant-select-selector {
+  border-color: #b9c2cf !important;
+}
+
+.ant-input:focus,
+.ant-input-focused,
+.ant-input-affix-wrapper-focused,
+.ant-select-focused .ant-select-selector {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+}
+
+/* ---------------- 进度条 ---------------- */
+
+.ant-progress-inner {
+  background: #eef0f3 !important;
+}
+
+/* ---------------- 列表 ---------------- */
+
+.ant-list-item {
+  border-block-end: 1px solid var(--line) !important;
+  padding: 13px 4px !important;
+  transition: background 0.16s ease;
+  border-radius: 8px;
+}
+
+.ant-list-item:hover {
+  background: #fafbfc;
+}
+
+.ant-checkbox-inner {
+  border-radius: 4px !important;
+  border-color: #c4cad4 !important;
+  background: var(--bg-surface) !important;
+}
+
+/* ---------------- 标签 ---------------- */
+
+.ant-tag {
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 20px;
+  padding-inline: 7px;
+}
+
+/* ---------------- 弹窗 ---------------- */
+
+.ant-modal-content {
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 32px -12px rgba(16, 24, 40, 0.22) !important;
+}
+
+.ant-modal-header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}

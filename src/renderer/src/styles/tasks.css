@@ -1,0 +1,72 @@
+/* ============================================================
+   tasks.css — 任务页
+   录入表单、工具栏、任务行
+   ============================================================ */
+
+/* ============================================================
+   任务页
+   ============================================================ */
+
+.progress-numbers {
+  font-size: 14px;
+  color: var(--text-3);
+}
+
+.progress-numbers-divider {
+  margin: 0 8px;
+  color: var(--line-strong);
+}
+
+.task-composer .ant-select,
+.task-composer .ant-picker {
+  flex: none;
+}
+
+.task-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.task-segmented {
+  background: var(--bg-subtle);
+}
+
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.task-row-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.task-row-title {
+  font-size: 14px;
+  color: var(--text-1);
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.task-row-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.task-row-meta .ant-tag {
+  margin-inline-end: 0;
+}
+
+.task-row-due {
+  font-size: 12px;
+  color: var(--text-3);
+}

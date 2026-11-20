@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Electron</title>
+    <!--
+      CSP 不写死在这里，由 electron.vite.config.mjs 里的 inject-csp 插件注入：
+      开发环境放宽（Vite HMR 需要 WebSocket 连接和 blob SharedWorker），生产环境收紧。
+      https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
+    -->
+    <!--csp-placeholder-->
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

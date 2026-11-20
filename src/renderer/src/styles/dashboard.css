@@ -1,0 +1,243 @@
+/* ============================================================
+   dashboard.css — 工作台首页
+   统计卡、进度看板、项目进度、待办清单
+   ============================================================ */
+
+/* ============================================================
+   工作台首页
+   ============================================================ */
+
+.stat-row {
+  margin-bottom: 16px;
+}
+
+.stat-card {
+  background: var(--bg-surface);
+}
+
+.stat-card .ant-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.stat-value {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--text-1);
+  letter-spacing: -0.5px;
+}
+
+.stat-suffix {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-3);
+  margin-left: 4px;
+}
+
+.stat-hint {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.stat-card--accent .stat-value {
+  color: var(--accent);
+}
+
+.stat-card--success .stat-value {
+  color: var(--c-success);
+}
+
+.stat-card--danger .stat-value {
+  color: var(--c-danger);
+}
+
+.dashboard-body .ant-col {
+  display: flex;
+}
+
+.dashboard-card {
+  width: 100%;
+}
+
+.dashboard-card .ant-card-body {
+  padding: 18px 20px;
+}
+
+.progress-hero {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 2px 0 18px;
+  flex-wrap: wrap;
+}
+
+.progress-meta {
+  flex: 1;
+  min-width: 200px;
+}
+
+.progress-meta-line {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.9;
+}
+
+.progress-meta-line b {
+  font-size: 19px;
+  color: var(--text-1);
+}
+
+.progress-meta-line--muted {
+  font-size: 13px;
+  color: var(--text-3);
+}
+
+.progress-tags {
+  margin-top: 8px;
+}
+
+.progress-divider {
+  height: 1px;
+  background: var(--line);
+  margin: 0 0 14px;
+}
+
+.progress-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-2);
+  margin-bottom: 10px;
+}
+
+.progress-list-head a {
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.progress-list-head a:hover {
+  color: var(--accent-hover);
+}
+
+.project-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.project-progress-item {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.project-progress-item:hover {
+  background: var(--bg-subtle);
+}
+
+.project-progress-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.project-progress-name {
+  color: var(--text-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-progress-count {
+  color: var(--text-3);
+  font-size: 12px;
+  flex: none;
+}
+
+.progress-empty {
+  color: var(--text-3);
+  font-size: 13px;
+  padding: 12px 0;
+}
+
+/* 待办清单 */
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 2px;
+  border-bottom: 1px solid var(--line);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+  background: #b3bac4;
+}
+
+.todo-dot--high {
+  background: var(--c-danger);
+}
+
+.todo-dot--medium {
+  background: var(--c-warning);
+}
+
+.todo-dot--low {
+  background: #b3bac4;
+}
+
+.todo-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-title {
+  font-size: 13.5px;
+  color: var(--text-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.todo-meta {
+  font-size: 12px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.todo-due {
+  font-size: 12px;
+  color: var(--text-3);
+  white-space: nowrap;
+  flex: none;
+}
+
+.todo-empty {
+  padding: 20px 0;
+}
+

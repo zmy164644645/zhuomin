@@ -1,0 +1,152 @@
+/* ============================================================
+   layout.css — 应用骨架
+   根容器、侧边栏、顶栏、内容区白面板、标题层级
+   ============================================================ */
+
+.zhuomianbuju {
+  height: 100vh;
+  background: transparent !important;
+}
+
+/* ---------------- 左侧导航 ---------------- */
+
+.zuocecaidan {
+  height: 100vh;
+  background: var(--bg-surface) !important;
+  border-right: 1px solid var(--line);
+}
+
+.caidanlogo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 18px;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  color: var(--text-1);
+  border-bottom: 1px solid var(--line);
+}
+
+/* 品牌名保持纯色，不用渐变字 */
+.caidanlogo span {
+  color: var(--text-1);
+  white-space: nowrap;
+}
+
+.logoqutupian {
+  height: 26px;
+  width: 26px;
+  flex: 0 0 auto;
+  border-radius: 6px;
+  object-fit: contain;
+  border: 1px solid var(--line);
+}
+
+.zuocecaidan .ant-menu {
+  background: transparent !important;
+  border-inline-end: none !important;
+  padding: 12px 10px;
+}
+
+.zuocecaidan .ant-menu-item {
+  position: relative;
+  color: var(--text-2) !important;
+  font-size: 13.5px;
+  letter-spacing: 0.1px;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.zuocecaidan .ant-menu-item:hover {
+  background: var(--bg-subtle) !important;
+  color: var(--text-1) !important;
+}
+
+.zuocecaidan .ant-menu-item-selected {
+  background: var(--accent-soft) !important;
+  color: var(--accent-hover) !important;
+  font-weight: 500;
+}
+
+/* 选中项左侧实心竖条：纯色，无发光 */
+.zuocecaidan .ant-menu-item-selected::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 16px;
+  border-radius: 0 2px 2px 0;
+  background: var(--accent);
+  border: none !important;
+  opacity: 1 !important;
+  inset-inline-end: auto !important;
+}
+
+.zuocecaidan .ant-menu-item .anticon {
+  font-size: 15px;
+}
+
+/* ---------------- 顶部标题栏 ---------------- */
+
+.dingbutoubu {
+  height: 56px !important;
+  line-height: 56px !important;
+  background: var(--bg-surface) !important;
+  color: var(--text-1) !important;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------------- 主内容区：白色面板 ---------------- */
+
+.neirongquyu {
+  margin: 16px;
+  padding: 24px 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow-y: auto;
+  height: calc(100vh - 56px - 32px);
+}
+
+.neirongquyu::-webkit-scrollbar {
+  width: 10px;
+}
+
+.neirongquyu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.neirongquyu::-webkit-scrollbar-thumb {
+  background: #dcdfe4;
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.neirongquyu::-webkit-scrollbar-thumb:hover {
+  background: #c3c8d0;
+  background-clip: content-box;
+}
+
+/* ---------------- 标题与文字层级 ---------------- */
+
+.neirongquyu h2 {
+  color: var(--text-1) !important;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px !important;
+  line-height: 1.4;
+}
+
